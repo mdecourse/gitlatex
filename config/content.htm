@@ -1,15 +1,56 @@
 <h1>About</h1>
-<p>此內容管理系統以 <a href="https://github.com/mdecourse/cmsimde">https://github.com/mdecourse/cmsimde</a> 作為 submodule 運作, 可以選定對應的版本運作, cmsimde 可以持續改版, 不會影響之前設為 submodule, 使用舊版 cmsimde 模組的內容管理相關運作.</p>
-<h4>利用 cmsimde 建立靜態網誌方法:</h4>
-<p>1. 在 github 建立倉儲, git clone 到近端</p>
-<p>2. 參考 <a href="https://github.com/mdecourse/newcms">https://github.com/mdecourse/newcms</a>, 加入除了 cmsimde 目錄外的所有內容</p>
-<p>以 git submodule add <a href="https://github.com/mdecourse/cmsimde">https://github.com/mdecourse/cmsimde</a> cmsimde</p>
-<p>建立 cmsimde 目錄, 並從 github 取下子模組內容.</p>
-<p>3.在近端維護時, 更換目錄到倉儲中的 cmsimde, 以 python wsgi.py 啟動近端網際伺服器.</p>
-<p>動態內容編輯完成後, 以 generate_pages 轉為靜態內容, 以 git add commit 及 push 將內容推到遠端.</p>
-<p>4. 之後若要以 git clone 取下包含 submodule 的所有內容, 執行:</p>
-<p>git clone --recurse-submodules <a href="https://github.com/mdecourse/newcms.git">https://github.com/mdecourse/newcms.git</a></p>
-<h1>Develop</h1>
-<p><a href="https://github.com/mdecourse/cmsimde">https://github.com/mdecourse/cmsimde</a> 的開發, 可以在一個目錄中放入 cmsimde, 然後將 up_dir 中的內容放到與 cmsimde 目錄同位階的地方, 使用 command 進入 cmsimde 目錄, 執行 python wsgi.py, 就可以啟動, 以瀏覽器 https://localhost:9443 就可以連接, 以 admin 作為管理者密碼, 就可以登入維護內容.</p>
-<p>cmsimde 的開發採用 Leo Editor, 開啟 cmsimde 目錄中的 cmsimde.leo 就可以進行程式修改, 結束後, 若要保留網際內容, 只要將 cmsimde 外部的內容倒回 up_dir 目錄中即可後續對 cmsimde 遠端倉儲進行改版.</p>
-<p>init.py 位於  up_dir 目錄, 可以設定 site_title 與 uwsgi 等變數.</p>
+<h1>Beginners</h1>
+<h4>LaTeX for Beginners:</h4>
+<p style="padding-left: 30px;"><a href="http://www.docs.is.ed.ac.uk/skills/documents/3722/3722-2014.pdf">http://www.docs.is.ed.ac.uk/skills/documents/3722/3722-2014.pdf</a></p>
+<h2>LTFB</h2>
+<h4><a href="http://www.docs.is.ed.ac.uk/skills/documents/3722/3722-2014.pdf">LaTeX For Beginners</a></h4>
+<p>LaTeX (pronouncedlay-tek) is a document preparation system for producing professional-looking documents, it is not a word processor.</p>
+<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">\documentclass[a4paper,12pt]{article}
+
+\begin{document}
+
+\title{My First Document}
+\author{My Name}
+\date{\today}
+\maketitle
+
+\pagenumbering{roman}
+\tableofcontents
+\newpage
+\pagenumbering{arabic}
+
+\section{Introduction}
+This is the introduction.
+
+\section{Methods}
+
+\subsection{Stage 1}
+\label{sec1}
+The first part of the methods.
+
+\subsection{Stage 2}
+The second part of the methods.
+
+\section{Results}
+Here are my results. Referring to section \ref{sec1} on page \pageref{sec1}.
+
+\end{document}</pre>
+<p>The \documentclass command must appear at the start of every LATEX document. The text in the curly brackets specifies the document class. The article document class is suitable for shorter documents such as journal articles and short reports. Other document classes include report (for longer documents with chapters, e.g. PhD theses), proc (conference proceedings), book and slides. The text in the square brackets specifies options — in this case it sets the paper size to A4 and the main font size to 12pt.</p>
+<p>The \begin{document} and \end{document} commands  enclose  the  textand commands that make up your document.  Anything typed before \begin{document} is known as the preamble, and will affect the whole document. Anything typed after \end{document} is ignored.</p>
+<p>You can label any of the sectioning commands so they can be referred to in other parts of the document.  Label the section with \label{labelname}. Then type \ref{labelname} or \pageref{labelname}, when you want to refer to the section or page number of the label.</p>
+<p>If you use sectioning commands it is very easy to generate a table of contents. Type \tableofcontents where you want the table of contents to appear in your document — often directly after the title page. You may also want to change the page numbering so that roman numerals (i, ii, iii) are used for pages before the main document starts.  This will also ensure that the main document starts on page 1.  Page numbering can be switched between arabic and roman using \pagenumbering{...}.</p>
+<p>The\newpage command inserts a page break so that we can see the effect of the page numbering commands.</p>
+<p>To put coloured text in your document you need to use apackage.  There are many packages that can be used with LATEX to enhance its functionality. Packages are included in the preamble (i.e. before the \begin{document} command). Packages are activated using the \usepackage[options]{package} command, where packageis the name of the package and optionsis an optional list of keywords that trigger special features in the package.</p>
+<p>The basic colour names that \usepackage{color} knows about are black, red, green, blue, cyan, magenta, yellow and white.</p>
+<p>The following symbols are reserved characters which have a special meaningin LATEX:</p>
+<p>$ % ^ &amp; _ { } ~ \</p>
+<p>All of these apart from the backslash \ can be inserted as characters in your document by adding a prefix backslash: \#  \$  \%  \^{} \&amp;  \_  \{  \}  \~{}.</p>
+<p>Note that you need to type a pair of curly brackets {} after the hat ^ and tilde ~, otherwise these will appear as accents over the following character. For example, "\^ e" produces "ˆe".The above code will produce: # $ % ˆ &amp; { }  ̃. The backslash character \can not be entered by adding a prefix backslash, \\, as this is used for line breaking. Use the \textbackslask command instead.</p>
+<p>This chapter describes how to insert an image in to your LATEX document,which requires thegraphicx package.  Images should be PDF, PNG, JPEGor GIF files.  The following code will insert an image called myimage:</p>
+<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">\begin{figure}[h]
+\centering
+\includegraphics[width=1\textwidth]{myimage}
+\caption{Here is my image}
+\label{image-myimage}
+\end{figure}</pre>
+<p>[h] is the placement specifier. h means put the figure approximately here (if it will fit). Other options are t (at the top of the page), b (at the bottom ofthe page) and p(on a separate page for figures). You can also add !, which overrides the rule LATEX uses for choosing where to put the figure, and makes it more likely it will put it where you want (even if it doesn’t look so good). \centering centres the image on the page, if not used images are left-alignedby default. It’s a good idea to use this as the figure captions are centred. includegraphics{...} is the command that actually puts the image in your document. The image file should be saved in the same folder as the .tex file. [width=1\textwidth] is an optional command that specifies the width ofthe picture - in this case the same width as the text. The width could also be given in centimeters (cm). You could also use[ scale=0.5] which scales the image by the desired factor, in this case reducing by half.</p>
