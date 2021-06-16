@@ -2,6 +2,7 @@
         <head>
         <title>Gitlatex</title>
         <meta charset="utf-8">
+<meta property="head" content="H2">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700,900" rel="stylesheet">
         <link rel="stylesheet" href="./../cmsimde/static/chimper/fonts/icomoon/style.css">
@@ -133,8 +134,67 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content"> <a href='Beginners.html'>Next</a> >> Beginners<br /><h1>About</h1>
-<br /> <a href='Beginners.html'>Next</a> >> Beginners</div>
+    <div id="tipue_search_content">Bash << <a href='Bash.html'>Previous</a> <a href='Packages.html'>Next</a> >> Packages<br /><h1>LaTeX</h1>
+<p>A basic principle of LaTeX is that the author should not be distracted too much by the formatting issues. Usually, the author focuses on the content and formats logically, for example, instead of writing a chapter title in big bold letters, you just tell LaTeX that it's a chapter heading—you could let LaTeX design the heading or you decide in the document's settings what the headings will look like—just once for the whole document. <span style="background-color: #ffff99;">LaTeX uses style files extensively called classes and packages</span>, making it easy to design and to modify the appearance of the whole document and all of its details.</p>
+<p>There could be several arguments, each of them in braces or brackets. <span style="background-color: #ffff99;">Arguments in curly braces are mandatory</span>. If a command is defined to require an argument, one has to be given.</p>
+<p>LaTeX treats multiple spaces just like a single space.</p>
+<p>In LaTeX, spaces separate words, <span style="background-color: #ffff99;">empty lines separate paragraphs</span>.</p>
+<h4><a href="http://www.docs.is.ed.ac.uk/skills/documents/3722/3722-2014.pdf">LaTeX For Beginners</a></h4>
+<p>LaTeX (pronouncedlay-tek) is a document preparation system for producing professional-looking documents, it is not a word processor.</p>
+<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">\documentclass[a4paper,12pt]{article}
+
+\begin{document}
+
+\title{My First Document}
+\author{My Name}
+\date{\today}
+\maketitle
+
+\pagenumbering{roman}
+\tableofcontents
+\newpage
+\pagenumbering{arabic}
+
+\section{Introduction}
+This is the introduction.
+
+\section{Methods}
+
+\subsection{Stage 1}
+\label{sec1}
+The first part of the methods.
+
+\subsection{Stage 2}
+The second part of the methods.
+
+\section{Results}
+Here are my results. Referring to section \ref{sec1} on page \pageref{sec1}.
+
+\end{document}</pre>
+<p>The \documentclass command must appear at the start of every LATEX document. <span style="background-color: #ffff99;">The text in the curly brackets specifies the document class</span>. The article document class is suitable for shorter documents such as journal articles and short reports. Other document classes include report (for longer documents with chapters, e.g. PhD theses), proc (conference proceedings), book and slides. <span style="background-color: #ffff99;">The text in the square brackets specifies options</span> — in this case it sets the paper size to A4 and the main font size to 12pt.</p>
+<p>The \begin{document} and \end{document} commands  enclose  the  textand commands that make up your document.  Anything typed before \begin{document} is known as the preamble, and will affect the whole document. Anything typed after \end{document} is ignored.</p>
+<p>You can label any of the sectioning commands so they can be referred to in other parts of the document.  Label the section with \label{labelname}. Then type \ref{labelname} or \pageref{labelname}, when you want to refer to the section or page number of the label.</p>
+<p>If you use sectioning commands it is very easy to generate a table of contents. Type \tableofcontents where you want the table of contents to appear in your document — often directly after the title page. You may also want to change the page numbering so that roman numerals (i, ii, iii) are used for pages before the main document starts.  This will also ensure that the main document starts on page 1.  Page numbering can be switched between arabic and roman using \pagenumbering{...}.</p>
+<p>The\newpage command inserts a page break so that we can see the effect of the page numbering commands.</p>
+<p>To put coloured text in your document you need to use apackage.  There are many packages that can be used with LATEX to enhance its functionality. Packages are included in the preamble (i.e. before the \begin{document} command). Packages are activated using the \usepackage[options]{package} command, where packageis the name of the package and optionsis an optional list of keywords that trigger special features in the package.</p>
+<p>The basic colour names that \usepackage{color} knows about are black, red, green, blue, cyan, magenta, yellow and white.</p>
+<p>The following symbols are reserved characters which have a special meaningin LATEX:</p>
+<p>$ % ^ &amp; _ { } ~ \</p>
+<p>All of these apart from the backslash \ can be inserted as characters in your document by adding a prefix backslash: \#  \$  \%  \^{} \&amp;  \_  \{  \}  \~{}.</p>
+<p>Note that you need to type a pair of curly brackets {} after the hat ^ and tilde ~, otherwise these will appear as accents over the following character. For example, "\^ e" produces "ˆe".The above code will produce: # $ % ˆ &amp; { }  ̃. The backslash character \can not be entered by adding a prefix backslash, \\, as this is used for line breaking. Use the \textbackslask command instead.</p>
+<p>This chapter describes how to insert an image in to your LATEX document,which requires thegraphicx package.  Images should be PDF, PNG, JPEGor GIF files.  The following code will insert an image called myimage:</p>
+<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">\begin{figure}[h]
+\centering
+\includegraphics[width=1\textwidth]{myimage}
+\caption{Here is my image}
+\label{image-myimage}
+\end{figure}</pre>
+<p>[h] is the placement specifier. h means put the figure approximately here (if it will fit). Other options are t (at the top of the page), b (at the bottom ofthe page) and p(on a separate page for figures). You can also add !, which overrides the rule LATEX uses for choosing where to put the figure, and makes it more likely it will put it where you want (even if it doesn’t look so good). \centering centres the image on the page, if not used images are left-alignedby default. It’s a good idea to use this as the figure captions are centred. includegraphics{...} is the command that actually puts the image in your document. The image file should be saved in the same folder as the .tex file. [width=1\textwidth] is an optional command that specifies the width ofthe picture - in this case the same width as the text. The width could also be given in centimeters (cm). You could also use[ scale=0.5] which scales the image by the desired factor, in this case reducing by half.</p>
+<p>You can enter math mode with an opening and closing dollar sign $. This can be used to write mathematical symbols within a sentence — for example, typing $1+2=3$ produces 1 + 2 = 3. If you want a "displayed" equation on its own line use $$...$$.</p>
+<p>For a numbered displayed equation, use \begin{equation}...\end{equation}. For example, \begin{equation}1+2=3\end{equation}.</p>
+<p>The number after the equation refers to the chapter number, this will only appear if you are using a document class with chapters, such as report. Use \begin{eqnarray}...\end{eqnarray} to write  equation arrays for a series of equations /inequalities.</p>
+<p>For unnumbered equations add the star symbol * after the equation or eqnarray command (i.e. use {equation*} or {eqnarray*}).</p>
+<br />Bash << <a href='Bash.html'>Previous</a> <a href='Packages.html'>Next</a> >> Packages</div>
         
     <!-- footer -->
       <div class="container">

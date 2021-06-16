@@ -2,6 +2,7 @@
         <head>
         <title>Gitlatex</title>
         <meta charset="utf-8">
+<meta property="head" content="H2">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700,900" rel="stylesheet">
         <link rel="stylesheet" href="./../cmsimde/static/chimper/fonts/icomoon/style.css">
@@ -87,6 +88,7 @@ img.add_border {
 </head>
 <body>
 <div class='container'><nav>
+        
     <div class="site-wrap">
 
     <div class="site-mobile-menu">
@@ -132,4 +134,71 @@ img.add_border {
           </div>
           
         </header>
-    </nav><section><h1>Site Map</h1><div id="tipue_search_content"></div><ul><li><a href='About.html'>About</a><li><a href='Beginners.html'>Beginners</a><ul><li><a href='Bash.html'>Bash</a><li><a href='LaTeX.html'>LaTeX</a><ul><li><a href='Packages.html'>Packages</a></li></ul><li><a href='StackExchange.html'>StackExchange</a></li></ul><li><a href='Ebooks.html'>Ebooks</a><li><a href='Github Actions.html'>Github Actions</a><ul><li><a href='examples.html'>examples</a></li></ul></section></div></body></html>
+    <div id="tipue_search_content">Beginners << <a href='Beginners.html'>Previous</a> <a href='LaTeX.html'>Next</a> >> LaTeX<br /><h1>Bash</h1>
+<p><a href="https://tldp.org/LDP/Bash-Beginners-Guide/html/index.html">https://tldp.org/LDP/Bash-Beginners-Guide/html/index.html</a></p>
+<p>Start cmsimde:</p>
+<p>cms file content:</p>
+<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">python3 cmsimde/wsgi.py</pre>
+<p>chmod u+x cms</p>
+<h4>Execute cms:</h4>
+<p style="padding-left: 30px;">./cms</p>
+<p>git add, git commit -m "commit_string", git push</p>
+<h4>acp file content:</h4>
+<p>chmod u+x acp</p>
+<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">#! /bin/bash
+git add .
+git commit -m "$1"
+git push</pre>
+<h4>Execute acp:</h4>
+<p style="padding-left: 30px;">./acp "the commit message"</p>
+<p></p><br />Beginners << <a href='Beginners.html'>Previous</a> <a href='LaTeX.html'>Next</a> >> LaTeX</div>
+        
+    <!-- footer -->
+      <div class="container">
+        <div class="row pt-3 mx-auto">
+            <p>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" >Colorlib</a>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            </p>
+        </div>
+      </div>
+    <!-- for footer -->
+    
+        </div> <!-- for site wrap -->
+            <!-- <script src="../cmsimde/static/chimper/js/jquery-3.3.1.min.js"></script> -->
+            <script src="../cmsimde/static/chimper/js/jquery-migrate-3.0.1.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery-ui.js"></script>
+            <script src="../cmsimde/static/chimper/js/popper.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/bootstrap.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/owl.carousel.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery.stellar.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery.countdown.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery.magnific-popup.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/bootstrap-datepicker.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/aos.js"></script>
+            <!--
+            <script src="../cmsimde/static/chimper/js/typed.js"></script>
+                    <script>
+                    var typed = new Typed('.typed-words', {
+                    strings: ["Web Apps"," WordPress"," Mobile Apps"],
+                    typeSpeed: 80,
+                    backSpeed: 80,
+                    backDelay: 4000,
+                    startDelay: 1000,
+                    loop: true,
+                    showCursor: true
+                    });
+                    </script>
+            -->
+            <script src="../cmsimde/static/chimper/js/main.js"></script>
+        
+<!-- 啟用 LaTeX equations 編輯 -->
+  <!-- <script>
+  MathJax = {
+    tex: {inlineMath: [['$', '$'], ['\(', '\)']]}
+  };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>-->
+    </body></html>
+        

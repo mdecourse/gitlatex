@@ -1,146 +1,140 @@
-<h1>About</h1>
-<h1>Beginners</h1>
-<p><a href="https://www.overleaf.com/articles/da-jia-lai-xue-latex-latex123/jypmqhfhfbyc">大家來學 LaTeX</a></p>
-<p><a href="http://home.iitk.ac.in/~dasgupta/teaching/LSSC/TechInScholComm/A%20Brief%20Introduction%20to%20LaTeX-2017-8.pdf">Introduction to LaTeX</a></p>
-<p><a href="https://www.tug.org/twg/mactex/tutorials/ltxprimer-1.0.pdf">LaTeX tutorial</a></p>
-<h4>LaTeX for Beginners:</h4>
-<p style="padding-left: 30px;"><a href="http://www.docs.is.ed.ac.uk/skills/documents/3722/3722-2014.pdf">http://www.docs.is.ed.ac.uk/skills/documents/3722/3722-2014.pdf</a></p><h2>Bash</h2>
-<p><a href="https://tldp.org/LDP/Bash-Beginners-Guide/html/index.html">https://tldp.org/LDP/Bash-Beginners-Guide/html/index.html</a></p>
-<p>Start cmsimde:</p>
-<p>cms file content:</p>
-<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">python3 cmsimde/wsgi.py</pre>
-<p>chmod u+x cms</p>
-<h4>Execute cms:</h4>
-<p style="padding-left: 30px;">./cms</p>
-<p>git add, git commit -m "commit_string", git push</p>
-<h4>acp file content:</h4>
-<p>chmod u+x acp</p>
-<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">#! /bin/bash
-git add .
-git commit -m "$1"
-git push</pre>
-<h4>Execute acp:</h4>
-<p style="padding-left: 30px;">./acp "the commit message"</p>
-<p></p><h2>LaTeX</h2>
-<p>A basic principle of LaTeX is that the author should not be distracted too much by the formatting issues. Usually, the author focuses on the content and formats logically, for example, instead of writing a chapter title in big bold letters, you just tell LaTeX that it's a chapter heading—you could let LaTeX design the heading or you decide in the document's settings what the headings will look like—just once for the whole document. <span style="background-color: #ffff99;">LaTeX uses style files extensively called classes and packages</span>, making it easy to design and to modify the appearance of the whole document and all of its details.</p>
-<p>There could be several arguments, each of them in braces or brackets. <span style="background-color: #ffff99;">Arguments in curly braces are mandatory</span>. If a command is defined to require an argument, one has to be given.</p>
-<p>LaTeX treats multiple spaces just like a single space.</p>
-<p>In LaTeX, spaces separate words, <span style="background-color: #ffff99;">empty lines separate paragraphs</span>.</p>
-<h4><a href="http://www.docs.is.ed.ac.uk/skills/documents/3722/3722-2014.pdf">LaTeX For Beginners</a></h4>
-<p>LaTeX (pronouncedlay-tek) is a document preparation system for producing professional-looking documents, it is not a word processor.</p>
-<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">\documentclass[a4paper,12pt]{article}
+<!DOCTYPE html><html>
+        <head>
+        <title>Gitlatex</title>
+        <meta charset="utf-8">
+<meta property="head" content="H2">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700,900" rel="stylesheet">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/fonts/icomoon/style.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/bootstrap.min.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/magnific-popup.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/jquery-ui.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/owl.carousel.min.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/owl.theme.default.min.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/bootstrap-datepicker.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/fonts/flaticon/font/flaticon.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/aos.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/style.css">
+        <link rel="shortcut icon" href="./../cmsimde/static/favicons.png">
+        
+        <style type='text/css'>
+            .site-section {
+            background-color: #FFFF;
+            padding: 40px 40px;
+            }
+            body > div > div.dropdown.open {
+                display: block;
+            }
+        </style>
+    
+        <!-- <script src="./../cmsimde/static/jquery.js"></script> -->
+        <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+        <script src="../cmsimde/static/chimper/js/jquery-3.3.1.min.js"></script>
+        <link rel="stylesheet" href="./../cmsimde/static/tipuesearch/css/normalize.min.css">
+        <script src="./../cmsimde/static/tipuesearch/tipuesearch_set.js"></script>
+        <script src="tipuesearch_content.js"></script>
+        <link rel="stylesheet" href="./../cmsimde/static/tipuesearch/css/tipuesearch.css">
+        <script src="./../cmsimde/static/tipuesearch/tipuesearch.js"></script>
+        <script>
+            /* original tipuesearch
+            $(document).ready(function() {
+                 $('#tipue_search_input').tipuesearch();
+            });
+            */
+            // customed doSearch
+            function doSearch() {
+                $('#tipue_search_input').tipuesearch({
+                    newWindow: true, 
+                    minimumLength: 2,
+                    wholeWords: false, // for search 中文
+                });
+            }
+            $(document).ready(doSearch);
+        </script>
+        
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shCore.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushBash.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushDiff.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushJScript.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushJava.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushPython.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushSql.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushHaxe.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushXml.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushPhp.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushLua.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushCpp.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushCss.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushCSharp.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushDart.js"></script>
+<link type="text/css" rel="stylesheet" href="./../cmsimde/static/syntaxhighlighter/css/shCoreDefault.css"/>
+<script type="text/javascript">SyntaxHighlighter.all();</script>
+<!-- 暫時不用
+<script src="./../cmsimde/static/fengari-web.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/Cango-13v08-min.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/CangoAxes-4v01-min.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/gearUtils-05.js"></script>
+-->
+<!-- for Brython 暫時不用
+<script src="https://scrum-3.github.io/web/brython/brython.js"></script>
+<script src="https://scrum-3.github.io/web/brython/brython_stdlib.js"></script>
+-->
+<style>
+img.add_border {
+    border: 3px solid blue;
+}
+</style>
 
-\begin{document}
+</head>
+<body>
+<div class='container'><nav>
+        
+    <div class="site-wrap">
 
-\title{My First Document}
-\author{My Name}
-\date{\today}
-\maketitle
+    <div class="site-mobile-menu">
+      <div class="site-mobile-menu-header">
+        <div class="site-mobile-menu-close mt-3">
+          <span class="icon-close2 js-menu-toggle"></span>
+        </div>
+      </div>
+      <div class="site-mobile-menu-body"></div>
+    </div>
+    
+            <header class="site-navbar py-4 bg-white" role="banner">
+              <div class="container-fluid">
+                <div class="row align-items-center">
+                <h1>GitLaTeX - Learning LaTeX with Git</h1>
+                <div class="pl-4">
+                    <form>
+                    <input type="text" placeholder="Search" name="q" id="tipue_search_input" pattern=".{2,}" title="At least 2 characters" required>
+                    </form>
+                </div>
+                  <!-- <div class="col-11 col-xl-2">
+                    <h1 class="mb-0 site-logo"><a href="index.html" class="text-black h2 mb-0">GitLaTeX - Learning LaTeX with Git</a></h1> 
+                  </div>
+                  -->
+                  <div class="col-12 col-md-10 d-none d-xl-block">
+                    <nav class="site-navigation position-relative text-right" role="navigation">
+    <ul class='site-menu js-clone-nav mr-auto d-none d-lg-block'>
+                        <li class="active has-children"><a href="index.html">Home</a>
+                        <ul class="dropdown">
+                            <li><a href="sitemap.html">Site Map</a></li>
+                            <li><a href="./../reveal/index.html">reveal</a></li>
+                            <li><a href="./../blog/index.html">blog</a></li>
+                        </ul>
+                      </li>
+                     <li><a href='About.html'>About</a><li class='has-children'><a href='Beginners.html'>Beginners</a><ul class='dropdown'><li><a href='Bash.html'>Bash</a><li class='has-children'><a href='LaTeX.html'>LaTeX</a><ul class='dropdown'><li><a href='Packages.html'>Packages</a></li></ul><li><a href='StackExchange.html'>StackExchange</a></li></ul><li><a href='Ebooks.html'>Ebooks</a><li class='has-children'><a href='Github Actions.html'>Github Actions</a><ul class='dropdown'><li><a href='examples.html'>examples</a></li>
+                      </ul>
+                </nav>
+              </div>
+              <div class="d-inline-block d-xl-none ml-md-0 mr-auto py-3" style="position: relative; top: 3px;"><a href="#" class="site-menu-toggle js-menu-toggle text-black"><span class="icon-menu h3"></span></a></div>
+              </div>
 
-\pagenumbering{roman}
-\tableofcontents
-\newpage
-\pagenumbering{arabic}
-
-\section{Introduction}
-This is the introduction.
-
-\section{Methods}
-
-\subsection{Stage 1}
-\label{sec1}
-The first part of the methods.
-
-\subsection{Stage 2}
-The second part of the methods.
-
-\section{Results}
-Here are my results. Referring to section \ref{sec1} on page \pageref{sec1}.
-
-\end{document}</pre>
-<p>The \documentclass command must appear at the start of every LATEX document. <span style="background-color: #ffff99;">The text in the curly brackets specifies the document class</span>. The article document class is suitable for shorter documents such as journal articles and short reports. Other document classes include report (for longer documents with chapters, e.g. PhD theses), proc (conference proceedings), book and slides. <span style="background-color: #ffff99;">The text in the square brackets specifies options</span> — in this case it sets the paper size to A4 and the main font size to 12pt.</p>
-<p>The \begin{document} and \end{document} commands  enclose  the  textand commands that make up your document.  Anything typed before \begin{document} is known as the preamble, and will affect the whole document. Anything typed after \end{document} is ignored.</p>
-<p>You can label any of the sectioning commands so they can be referred to in other parts of the document.  Label the section with \label{labelname}. Then type \ref{labelname} or \pageref{labelname}, when you want to refer to the section or page number of the label.</p>
-<p>If you use sectioning commands it is very easy to generate a table of contents. Type \tableofcontents where you want the table of contents to appear in your document — often directly after the title page. You may also want to change the page numbering so that roman numerals (i, ii, iii) are used for pages before the main document starts.  This will also ensure that the main document starts on page 1.  Page numbering can be switched between arabic and roman using \pagenumbering{...}.</p>
-<p>The\newpage command inserts a page break so that we can see the effect of the page numbering commands.</p>
-<p>To put coloured text in your document you need to use apackage.  There are many packages that can be used with LATEX to enhance its functionality. Packages are included in the preamble (i.e. before the \begin{document} command). Packages are activated using the \usepackage[options]{package} command, where packageis the name of the package and optionsis an optional list of keywords that trigger special features in the package.</p>
-<p>The basic colour names that \usepackage{color} knows about are black, red, green, blue, cyan, magenta, yellow and white.</p>
-<p>The following symbols are reserved characters which have a special meaningin LATEX:</p>
-<p>$ % ^ &amp; _ { } ~ \</p>
-<p>All of these apart from the backslash \ can be inserted as characters in your document by adding a prefix backslash: \#  \$  \%  \^{} \&amp;  \_  \{  \}  \~{}.</p>
-<p>Note that you need to type a pair of curly brackets {} after the hat ^ and tilde ~, otherwise these will appear as accents over the following character. For example, "\^ e" produces "ˆe".The above code will produce: # $ % ˆ &amp; { }  ̃. The backslash character \can not be entered by adding a prefix backslash, \\, as this is used for line breaking. Use the \textbackslask command instead.</p>
-<p>This chapter describes how to insert an image in to your LATEX document,which requires thegraphicx package.  Images should be PDF, PNG, JPEGor GIF files.  The following code will insert an image called myimage:</p>
-<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">\begin{figure}[h]
-\centering
-\includegraphics[width=1\textwidth]{myimage}
-\caption{Here is my image}
-\label{image-myimage}
-\end{figure}</pre>
-<p>[h] is the placement specifier. h means put the figure approximately here (if it will fit). Other options are t (at the top of the page), b (at the bottom ofthe page) and p(on a separate page for figures). You can also add !, which overrides the rule LATEX uses for choosing where to put the figure, and makes it more likely it will put it where you want (even if it doesn’t look so good). \centering centres the image on the page, if not used images are left-alignedby default. It’s a good idea to use this as the figure captions are centred. includegraphics{...} is the command that actually puts the image in your document. The image file should be saved in the same folder as the .tex file. [width=1\textwidth] is an optional command that specifies the width ofthe picture - in this case the same width as the text. The width could also be given in centimeters (cm). You could also use[ scale=0.5] which scales the image by the desired factor, in this case reducing by half.</p>
-<p>You can enter math mode with an opening and closing dollar sign $. This can be used to write mathematical symbols within a sentence — for example, typing $1+2=3$ produces 1 + 2 = 3. If you want a "displayed" equation on its own line use $$...$$.</p>
-<p>For a numbered displayed equation, use \begin{equation}...\end{equation}. For example, \begin{equation}1+2=3\end{equation}.</p>
-<p>The number after the equation refers to the chapter number, this will only appear if you are using a document class with chapters, such as report. Use \begin{eqnarray}...\end{eqnarray} to write  equation arrays for a series of equations /inequalities.</p>
-<p>For unnumbered equations add the star symbol * after the equation or eqnarray command (i.e. use {equation*} or {eqnarray*}).</p>
-<h3>Packages</h3>
-<p>A first set of packages: <a href="http://joshua.smcvt.edu/latex/packages.pdf">http://joshua.smcvt.edu/latex/packages.pdf</a></p>
-<p>To change page size, margins, and orienta-tion, use geometry.</p>
-<p>Get multiple columns with multicol.</p>
-<p>Any document containing significantamounts of mathematics should use the American Mathematical Society’s packages amsmath and amssymb.</p>
-<p>To tweak lists, use enumitem.</p>
-<p>Get hyperlinks and turn references intolinks with hyperref (this should be the last or next to last package that you load).</p>
-<p>\usepackage{geometry}</p>
-<p>\usepackage{amsmath}</p>
-<p>\usepackage{amssymb}</p>
-<p>\usepackage{enumitem}</p>
-<p>\usepackage{xspace}</p>
-<p>\usepackage{tikz}</p>
-<p>\usepackage{graphicx}</p>
-<p>\usepackage{hyperref}</p>
-<h2>StackExchange</h2><h1>Ebooks</h1>
-<p>Linea Algebra</p>
-<p><a href="https://hefferon.net/linearalgebra">https://hefferon.net/linearalgebra</a></p>
-<p style="padding-left: 30px;"><a href="http://joshua.smcvt.edu/linearalgebra/jhanswer.pdf">http://joshua.smcvt.edu/linearalgebra/jhanswer.pdf</a> </p>
-<p style="padding-left: 30px;"><a href="https://gitlab.com/jim.hefferon/linear-algebra">https://gitlab.com/jim.hefferon/linear-algebra</a> (LaTeX sources)</p>
-<p></p>
-<p>Theory of Computation</p>
-<p><a href="https://hefferon.net/computation">https://hefferon.net/computation</a></p>
-<p style="padding-left: 30px;"><a href="http://joshua.smcvt.edu/computation/book.pdf">http://joshua.smcvt.edu/computation/book.pdf</a></p>
-<p style="padding-left: 30px;"><a href="https://gitlab.com/jim.hefferon/toc">https://gitlab.com/jim.hefferon/toc</a> (LaTeX sources)</p><h1>Github Actions</h1>
-<p><a href="https://docs.github.com/en/actions/reference">https://docs.github.com/en/actions/reference</a></p>
-<h4>Examples:</h4>
-<p style="padding-left: 30px;"><a href="https://pttdigits.com/LaTeX/1UjI1UHK">https://pttdigits.com/LaTeX/1UjI1UHK</a></p>
-<p style="padding-left: 60px;"><a href="https://github.com/Hsins/NTU-Thesis-CI">https://github.com/Hsins/NTU-Thesis-CI</a></p>
-<p style="padding-left: 60px;"><a href="https://github.com/mdecourse/NTU-Thesis-CI">https://github.com/mdecourse/NTU-Thesis-CI</a></p>
-<p style="padding-left: 30px;"><a href="https://github.com/KmolYuan/latex-paper/blob/master/.github/workflows/demo.yaml">https://github.com/KmolYuan/latex-paper/blob/master/.github/workflows/demo.yaml</a></p>
-<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">name: Demonstration
-on: [push, pull_request]
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - name: Install dependencies
-        env:
-          VER: "2.11.4"
-          CR_VER: "0.3.9.1"
-        run: |
-          sudo apt install -y texlive texlive-xetex texlive-lang-chinese gsfonts fonts-moe-standard-kai ttf-mscorefonts-installer librsvg2-bin
-          wget https://github.com/jgm/pandoc/releases/download/${VER}/pandoc-${VER}-1-amd64.deb
-          wget https://github.com/lierdakil/pandoc-crossref/releases/download/v${CR_VER}/pandoc-crossref-Linux.tar.xz
-          tar Jxvf pandoc-crossref-Linux.tar.xz &amp;&amp; rm -f pandoc-crossref-Linux.tar.xz
-          sudo dpkg -i pandoc-${VER}-1-amd64.deb &amp;&amp; rm -f pandoc-${VER}-1-amd64.deb
-          sudo mv pandoc-crossref* /usr/bin
-      - name: Compile
-        run: ./compile.sh
-      - name: Publish
-        uses: softprops/action-gh-release@v1
-        if: startsWith(github.ref, 'refs/tags/')
-        env:
-          GITHUB_TOKEN: ${{ secrets.PUBLISH_TOKEN }}
-        with:
-          body: Automatically published from Github Actions.
-          files: report.pdf
-</pre><h2>examples</h2>
+            </div>
+          </div>
+          
+        </header>
+    <div id="tipue_search_content">Github Actions << <a href='Github Actions.html'>Previous</a> <br /><h1>examples</h1>
 <h4>Github Actions examples:</h4>
 <p>Basic workflow:</p>
 <pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false"># This is a basic workflow to help you get started with Actions
@@ -572,4 +566,54 @@ Application of reinforcement
 %\end{center}
 %\end{landscape}
 \end{document}</pre>
-<p></p>
+<p></p><br />Github Actions << <a href='Github Actions.html'>Previous</a> </div>
+        
+    <!-- footer -->
+      <div class="container">
+        <div class="row pt-3 mx-auto">
+            <p>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" >Colorlib</a>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            </p>
+        </div>
+      </div>
+    <!-- for footer -->
+    
+        </div> <!-- for site wrap -->
+            <!-- <script src="../cmsimde/static/chimper/js/jquery-3.3.1.min.js"></script> -->
+            <script src="../cmsimde/static/chimper/js/jquery-migrate-3.0.1.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery-ui.js"></script>
+            <script src="../cmsimde/static/chimper/js/popper.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/bootstrap.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/owl.carousel.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery.stellar.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery.countdown.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery.magnific-popup.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/bootstrap-datepicker.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/aos.js"></script>
+            <!--
+            <script src="../cmsimde/static/chimper/js/typed.js"></script>
+                    <script>
+                    var typed = new Typed('.typed-words', {
+                    strings: ["Web Apps"," WordPress"," Mobile Apps"],
+                    typeSpeed: 80,
+                    backSpeed: 80,
+                    backDelay: 4000,
+                    startDelay: 1000,
+                    loop: true,
+                    showCursor: true
+                    });
+                    </script>
+            -->
+            <script src="../cmsimde/static/chimper/js/main.js"></script>
+        
+<!-- 啟用 LaTeX equations 編輯 -->
+  <!-- <script>
+  MathJax = {
+    tex: {inlineMath: [['$', '$'], ['\(', '\)']]}
+  };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>-->
+    </body></html>
+        

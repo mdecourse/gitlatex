@@ -2,6 +2,7 @@
         <head>
         <title>Gitlatex</title>
         <meta charset="utf-8">
+<meta property="head" content="H1">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700,900" rel="stylesheet">
         <link rel="stylesheet" href="./../cmsimde/static/chimper/fonts/icomoon/style.css">
@@ -87,6 +88,7 @@ img.add_border {
 </head>
 <body>
 <div class='container'><nav>
+        
     <div class="site-wrap">
 
     <div class="site-mobile-menu">
@@ -132,4 +134,89 @@ img.add_border {
           </div>
           
         </header>
-    </nav><section><h1>Site Map</h1><div id="tipue_search_content"></div><ul><li><a href='About.html'>About</a><li><a href='Beginners.html'>Beginners</a><ul><li><a href='Bash.html'>Bash</a><li><a href='LaTeX.html'>LaTeX</a><ul><li><a href='Packages.html'>Packages</a></li></ul><li><a href='StackExchange.html'>StackExchange</a></li></ul><li><a href='Ebooks.html'>Ebooks</a><li><a href='Github Actions.html'>Github Actions</a><ul><li><a href='examples.html'>examples</a></li></ul></section></div></body></html>
+    <div id="tipue_search_content">Ebooks << <a href='Ebooks.html'>Previous</a> <a href='examples.html'>Next</a> >> examples<br /><h1>Github Actions</h1>
+<p><a href="https://docs.github.com/en/actions/reference">https://docs.github.com/en/actions/reference</a></p>
+<h4>Examples:</h4>
+<p style="padding-left: 30px;"><a href="https://pttdigits.com/LaTeX/1UjI1UHK">https://pttdigits.com/LaTeX/1UjI1UHK</a></p>
+<p style="padding-left: 60px;"><a href="https://github.com/Hsins/NTU-Thesis-CI">https://github.com/Hsins/NTU-Thesis-CI</a></p>
+<p style="padding-left: 60px;"><a href="https://github.com/mdecourse/NTU-Thesis-CI">https://github.com/mdecourse/NTU-Thesis-CI</a></p>
+<p style="padding-left: 30px;"><a href="https://github.com/KmolYuan/latex-paper/blob/master/.github/workflows/demo.yaml">https://github.com/KmolYuan/latex-paper/blob/master/.github/workflows/demo.yaml</a></p>
+<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">name: Demonstration
+on: [push, pull_request]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install dependencies
+        env:
+          VER: "2.11.4"
+          CR_VER: "0.3.9.1"
+        run: |
+          sudo apt install -y texlive texlive-xetex texlive-lang-chinese gsfonts fonts-moe-standard-kai ttf-mscorefonts-installer librsvg2-bin
+          wget https://github.com/jgm/pandoc/releases/download/${VER}/pandoc-${VER}-1-amd64.deb
+          wget https://github.com/lierdakil/pandoc-crossref/releases/download/v${CR_VER}/pandoc-crossref-Linux.tar.xz
+          tar Jxvf pandoc-crossref-Linux.tar.xz &amp;&amp; rm -f pandoc-crossref-Linux.tar.xz
+          sudo dpkg -i pandoc-${VER}-1-amd64.deb &amp;&amp; rm -f pandoc-${VER}-1-amd64.deb
+          sudo mv pandoc-crossref* /usr/bin
+      - name: Compile
+        run: ./compile.sh
+      - name: Publish
+        uses: softprops/action-gh-release@v1
+        if: startsWith(github.ref, 'refs/tags/')
+        env:
+          GITHUB_TOKEN: ${{ secrets.PUBLISH_TOKEN }}
+        with:
+          body: Automatically published from Github Actions.
+          files: report.pdf
+</pre><br />Ebooks << <a href='Ebooks.html'>Previous</a> <a href='examples.html'>Next</a> >> examples</div>
+        
+    <!-- footer -->
+      <div class="container">
+        <div class="row pt-3 mx-auto">
+            <p>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" >Colorlib</a>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            </p>
+        </div>
+      </div>
+    <!-- for footer -->
+    
+        </div> <!-- for site wrap -->
+            <!-- <script src="../cmsimde/static/chimper/js/jquery-3.3.1.min.js"></script> -->
+            <script src="../cmsimde/static/chimper/js/jquery-migrate-3.0.1.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery-ui.js"></script>
+            <script src="../cmsimde/static/chimper/js/popper.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/bootstrap.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/owl.carousel.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery.stellar.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery.countdown.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery.magnific-popup.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/bootstrap-datepicker.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/aos.js"></script>
+            <!--
+            <script src="../cmsimde/static/chimper/js/typed.js"></script>
+                    <script>
+                    var typed = new Typed('.typed-words', {
+                    strings: ["Web Apps"," WordPress"," Mobile Apps"],
+                    typeSpeed: 80,
+                    backSpeed: 80,
+                    backDelay: 4000,
+                    startDelay: 1000,
+                    loop: true,
+                    showCursor: true
+                    });
+                    </script>
+            -->
+            <script src="../cmsimde/static/chimper/js/main.js"></script>
+        
+<!-- 啟用 LaTeX equations 編輯 -->
+  <!-- <script>
+  MathJax = {
+    tex: {inlineMath: [['$', '$'], ['\(', '\)']]}
+  };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>-->
+    </body></html>
+        
